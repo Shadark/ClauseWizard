@@ -8,7 +8,7 @@ install:
 script: pytest
 deploy:
   provider: pypi
-  server: https://testpypi.python.org/pypi
+  server: https://test.pypi.org/legacy/
   user: ${PYPI_USER}
   password:
     secure: ${PYPI_PASSWORD}
