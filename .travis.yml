@@ -10,8 +10,7 @@ deploy:
   provider: pypi
   server: https://test.pypi.org/legacy/
   user: $PYPI_USER
-  password:
-    secure: $PYPI_PASSWORD
+  password: $PYPI_PASSWORD
   on:
     tags: true
 
