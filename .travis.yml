@@ -9,8 +9,8 @@ script: pytest
 deploy:
   provider: pypi
   server: https://test.pypi.org/legacy/
-  user: $PYPI_USER
-  password: $PYPI_PASSWORD
+  user: ${PYPI_USER}
+  password: ${PYPI_PASSWORD}
   on:
     tags: true
 
