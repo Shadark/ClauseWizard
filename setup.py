@@ -1,10 +1,12 @@
 from setuptools import setup, find_packages
-from os import path
+from os import path, environ
 # io.open is needed for projects that support Python 2.7
 # It ensures open() defaults to text mode with universal newlines,
 # and accepts an argument to specify the text encoding
 # Python 3 only projects can skip this import
 from io import open
+
+environ["TRAVIS"] = 'true'
 
 here = path.abspath(path.dirname(__file__))
 
