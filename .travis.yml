@@ -6,16 +6,8 @@ install:
   - pip install -r requirements.txt
   - pip install .
 script: pytest
-deploy:
-  provider: pypi
-  user:
-    secure: DpL+MC/wm5yxzFDkf5ZMQHNSx+X76EFMhdyXYQC+/pJaOFgpsKijvVyFW0VKtyJ56Vq7nVl59M5FKI3LpcBTmu64of77dcRCmq49c1ETKRWG0g+NTiVHEyuPAooso03RTzADwPCdEYXvvNewu+Mx1qTDdrnpnJs3ncjD7VOKWrvZSeRjQsG8mdAFatZ+KHRCD2PlOsdD3b8Hig8cfxU5cJjLHgCchkpY8V1BqdG7OcE3g8rP1n6YknVgr+6H0pRLNezNDkbHbJ/FzeOya4V9aod6+Y1fW1RRz2QwXYIU155d+entIo5WsEs5xiBRnhMFaX3NHs8SrUkkCGqrUFz+sYY9wRKJj7zVcA53ZGt7sdiBQy93mL6ZD8zrkmSx7Ze25N7qJYwA0k8gW24VHd6U680ECmHM/RdFd0GAO/Vh2khMaX9mz/tar2TySeiA0UsyIbXfrbusZ62YYn7D1ywDJAV26Iik5BcBdgdsb733Lc6A+JPvD2kWSMhDg6xTWrlqwhFvFStU3KA5urFg55HapXZhEsIlOto45BZaRMNG+PfX7/5VeLPl7/oKWLgC4qfSyFk+0Aded4PZ2CvbtwTPCuiKgJiUjZVmzXAqgXgfbFpfAEipiuNE9oqRTM3yNxlDr9fssy5YZQqiZ27qwiviqQes3tBBPceRkHLXdMSZHE4=
-  password:
-    secure: EMIDfMa2EvgpqlXDFHek6uNl0SHAhYE1EWtir/45Ep87fQGYu0z0TLG0zumY+oozTpYpAzcInV3iPsoxKpNv7kXYRWN0fedbPrkSq1g767cdgiuu0zp9bFNYLrCn23W7z98zOOHvxVICc0cyT49voeFDaOTs8/ZRpgCpSK+XTbtLXOyx4ejiDcDJ8xiv8HkitN250gUqlhwg3PIHKaEHdue3Z0QPc3x1tKSf44JGkrWG2FxNh18rJ3bBh7vCcjm/NtHh4Vm/IzlFYEAYu4i/yMnrHczo8tvV6f9qVuj0rTeb58okckzBiALGmouA8FRuYa5FcsptEfJudwQkldqM8e4QdvEdmLmk6/sExe4qlIP/uT5QKliLbyGkx98fUoU0D/a5qxpQMVioxsoe+HzlmlAqjxjMTiMHWoGJ+9CgDcBse/MXkxMUYyWamDDy0eeNUaIoLu2l5yZEThN/hZVpHKW0B0hX2c3eK1EFWN1qXGmN8g2Bn5QudfPDmmz1K7sro4cRJjeAo8DPcT/69m3PW+d5jD/IeanTyB9r1+MQylmzkor6MC3ipyomP8Zb4pafCkk0a5qRTnx1TFP8H2Q7wxeA0dOGb4LDxDT91giTZOFEvf+jlnCSjY0+7ZzW8uon5xrk7zWQLwNkQxmY7X49oMmLNtkdVNp0KNYcwbwRFW4=
-  on:
-    tags: true
 after_success:
   - git config --global user.name "semantic-release (via TravisCI)"
   - git config --global user.email "semantic-release@travis"
   - pip install python-semantic-release
-  - semantic-release publish
+  - semantic-release publish retry
