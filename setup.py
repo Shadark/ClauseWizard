@@ -19,16 +19,16 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='ClauseWizard',
-    version='0.3.1',
     packages=find_packages(exclude=['contrib', 'docs', 'test']),
     install_requires=['pyparsing'],
     url='https://github.com/Shadark/ClauseWizard',
     license='GNU GPLv3',
     author='Shadark',
     author_email='fauglir@gmail.com',
-    description='Python-based JSON parser for files from the Clausewitz engine, used in multiple Paradox Interactive games.',
+    description='Python-based JSON parser for files from the Clausewitz engine,'
+                ' used in multiple Paradox Interactive games.',
     keywords='clausewitz paradoxinteractive parser',
-    entry_points={  # Optional
+    entry_points={
         'console_scripts': [
             'CWParser=sample:main',
         ],
