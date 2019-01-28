@@ -98,3 +98,7 @@ def main():
     # TODO Should I use return() or exit()?
 
     # TODO Optional step to save parse result and possibly resume progress by pickleing
+
+
+if __name__ == "__main__":
+    main()
