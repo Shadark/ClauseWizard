@@ -17,11 +17,11 @@ Currently supports both savegames and files from:
 * Ironman games: _not supported_ (in development). If the ironman save is not in binary format, it should work with this library.
 _(For HoI4 games, you need to change `save_as_binary=yes` option from `yes` to `no` on your `settings.txt` configuration file)._
 
-##Getting started
+# Getting started
 
-###Installation
+## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install ClauseWizard.
 
 ```bash
 pip install ClauseWizard
