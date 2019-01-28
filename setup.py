@@ -44,6 +44,8 @@ setup(
     author_email='fauglir@gmail.com',
     description='Python-based JSON parser for files from the Clausewitz engine,'
                 ' used in multiple Paradox Interactive games.',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     keywords='clausewitz paradoxinteractive parser',
     entry_points={
         'console_scripts': [

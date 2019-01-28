@@ -93,8 +93,6 @@ def main():
     except Exception as ex:
         raise ex
 
-    exit(0)
-
     # TODO Should I use return() or exit()?
 
     # TODO Optional step to save parse result and possibly resume progress by pickleing

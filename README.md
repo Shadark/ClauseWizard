@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.com/Shadark/ClauseWizard.svg?branch=master)](https://travis-ci.com/Shadark/ClauseWizard) [![PyPI version](https://badge.fury.io/py/ClauseWizard.svg)](https://badge.fury.io/py/ClauseWizard) [![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)]
+[![Build Status](https://travis-ci.com/Shadark/ClauseWizard.svg?branch=master)](https://travis-ci.com/Shadark/ClauseWizard) [![PyPI version](https://badge.fury.io/py/ClauseWizard.svg)](https://badge.fury.io/py/ClauseWizard) ![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)
 
 # ClauseWizard
-Python-based JSON parser for files from the Clausewitz engine, used in multiple Paradox Interactive games.
+Python-based JSON parser for files from the Clausewitz engine, used in multiple Paradox Interactive games. You can open the resulting files with any text editor, but since the file size can exceed the allowed limit for some editors,  you can use other software such as [HugeJsonViewer](https://github.com/WelliSolutions/HugeJsonViewer).
 
 Currently supports both savegames and files from:
 
@@ -27,9 +27,9 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 pip install ClauseWizard
 ```
 
-Binary packages will be available for release _Soon™_.
+Binary packages are available for download in the [Release](https://github.com/Shadark/ClauseWizard/releases) page.
 
-Python version is 3.7, will test other versions.
+_Python version is 3.7, will test other versions._
 
 ## Usage
 
