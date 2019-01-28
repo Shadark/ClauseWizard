@@ -1,0 +1,68 @@
+{
+  "list_of_strings": [
+    "String1",
+    "String2",
+    "2019-01-01",
+    "normal_string",
+    "two",
+    "strings",
+    1234,
+    12.34,
+    2019,
+    -1,
+    -1,
+    "0001-01-01",
+    "áccÉnts",
+    "not_sure_about_other_chars"
+  ],
+  "1234.5.12": "doublequotes",
+  "testing": [
+    "one",
+    "two",
+    3,
+    "check_full.string-with.characters"
+  ],
+  "thisisanemptyobject": "",
+  "across_lines": "",
+  "empty_nested": [
+    ""
+  ],
+  "dict": {
+    "phrase1": 1,
+    "phrase2": 2,
+    "phrase3": "string",
+    "phrase4": "",
+    "phrase5": [
+      "object1",
+      "object2",
+      3
+    ],
+    "phrase6": ""
+  },
+  "repeated_keys": {
+    "key": [
+      "value",
+      "value2",
+      [
+        "object"
+      ]
+    ]
+  },
+  "objectofobjects": [
+    {
+      "object": 1
+    },
+    {
+      "object": 2
+    }
+  ],
+  "CK2data": "",
+  "missing_equal": [
+    "testforerrors"
+  ],
+  "this.should_be-unquoted": "unquoted",
+  "this_is.a-string": true,
+  "something": {
+    "across_lines": false
+  }
+}

@@ -1,0 +1,92 @@
+EU4txt
+list_of_strings={
+	#Comment
+	"String1"
+	"String2"
+	#Date
+	"2019-01-01"
+	#"Double quotes" in a comment
+	normal_string
+	two strings
+	# Numbers
+	1234
+	12.34
+	# Date
+	2019-01-01
+	# "Invalid" and negative date
+	-1.1.1
+	·cc…nts
+	not_sure_about_other_chars
+}
+
+#Date
+1234.5.12="doublequotes"
+testing="one"
+testing=two
+testing=3
+testing=check_full.string-with.characters
+
+		
+#Testing objects
+
+thisisanemptyobject={}
+across_lines={
+
+
+}
+
+empty_nested={
+	
+	{}
+	{
+	
+		{}
+	
+	}
+
+}
+
+dict={
+	phrase1=1
+	phrase2=2
+	phrase3=string
+	phrase4=""#Empty
+	phrase5={object1 object2 3}
+	phrase6={}
+}
+
+repeated_keys={
+
+	key=value
+	key=value2
+	key={object}
+
+}
+
+objectofobjects={
+
+	{object=1}
+	{object=2}
+
+}
+
+# Fixes for files
+
+CK2txt #Leaving a trailing bracket
+}
+HOI4txt
+missing_equal{
+
+	testforerrors
+
+}
+
+"this.should_be-unquoted"=unquoted
+this_is.a-string=yes
+something =
+
+
+
+	{across_lines=no}
+	
+{} #Should disappear

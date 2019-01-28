@@ -20,7 +20,7 @@ def _preprocess(txt):
     return txt
 
 
-def parse_grammar(txt):
+def parse_grammar(txt, debug=False):
     txt = _preprocess(txt)
 
     EQ, LBRACE, RBRACE = map(pp.Suppress, "={}")  # Do not output
@@ -71,9 +71,6 @@ def parse_grammar(txt):
     file.ignore(comment)
     file.setName('file')
 
-    debug = False  # True for debugging, modify as you wish
-    # TODO: Debug by parameter
-
     if debug:
         date_type.setDebug()
         pp.dblQuotedString.setDebug()
@@ -94,4 +91,4 @@ def parse_grammar(txt):
     except pp.ParseException as pe:
         # Prints the last lines to cause the error, sometimes not very useful
         print(pp.ParseException.explain(pe, depth=None))
-        exit(-1)  # I guess exiting here is OK
+        raise pe  # Should throw exception, not exit

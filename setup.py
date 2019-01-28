@@ -27,5 +27,10 @@ setup(
     author='Shadark',
     author_email='fauglir@gmail.com',
     description='Python-based JSON parser for files from the Clausewitz engine, used in multiple Paradox Interactive games.',
-    keywords='clausewitz paradoxinteractive parser'
+    keywords='clausewitz paradoxinteractive parser',
+    entry_points={  # Optional
+        'console_scripts': [
+            'CWParser=sample:main',
+        ],
+    },
 )
