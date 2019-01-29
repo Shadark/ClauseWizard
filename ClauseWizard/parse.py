@@ -4,6 +4,9 @@ import pyparsing as pp
 import re
 from datetime import datetime
 
+# use packrat parsing for internal cache/memoizing
+pp.ParserElement.enablePackrat()
+
 
 def _preprocess(txt):
     txt = txt.replace("EU4txt", "", 1)  # Remove first line
@@ -12,9 +15,6 @@ def _preprocess(txt):
     txt = txt.replace("HOI4txt", "", 1)  # Same for HOI4 games
     txt = re.sub(r"([A-Za-z0-9_.\-]+){",
                  r"\1={", txt)  # Solve phrases without equal sign
-    txt = re.sub(r"\"([A-Za-z0-9_.\-]+)\"\s*=",
-                 r"\1=", txt, 0, re.MULTILINE)  # Unquote keys in phrases
-    txt = re.sub(r"=\s*{", r"={", txt, 0, re.MULTILINE)  # Fix spaces
     txt = re.sub(r"^\s*{\s*\}", r"", txt, 0, re.MULTILINE)  # Hack for random empty objects start of the line
     # If this breaks any further I'll break myself
     return txt
@@ -24,7 +24,7 @@ def parse_grammar(txt, debug=False):
     txt = _preprocess(txt)
 
     EQ, LBRACE, RBRACE = map(pp.Suppress, "={}")  # Do not output
-    comment = pp.Suppress("#") + pp.Suppress(pp.restOfLine)
+    comment = pp.pythonStyleComment
     real = pp.Regex(r"[+-]?\d+\.\d*").setParseAction(lambda x: float(x[0]))
     integer = pp.Regex(r"[+-]?\d+").setParseAction(lambda x: int(x[0]))
     yes = pp.CaselessKeyword("yes").setParseAction(pp.replaceWith(True))
@@ -61,10 +61,7 @@ def parse_grammar(txt, debug=False):
 
     # obj << nestedExpr(LBRACE, RBRACE, content=dataObj, ignoreExpr=dblQuotedString)
     # I think that slowed the code
-    empty_obj = pp.Empty().setParseAction(pp.replaceWith(''))
-    empty_obj.setName('empty_obj')
-
-    obj << (LBRACE + (data_obj | empty_obj) + RBRACE)
+    obj << (LBRACE + pp.Optional(data_obj, '') + RBRACE)
     obj.setName('obj')
 
     file = pp.OneOrMore(pp.Group(phrase))
@@ -78,7 +75,6 @@ def parse_grammar(txt, debug=False):
         data.setDebug()
         str_types.setDebug()
         phrase.setDebug()
-        empty_obj.setDebug()
         data_obj.setDebug()
         obj.setDebug()
         file.setDebug()
